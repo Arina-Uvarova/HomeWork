@@ -1,33 +1,26 @@
 ﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-/*
-double Power(int a, int b)
+
+int Power(int n1, int n2)
 {
-    double result = Math.Pow(a, b);
+    int i = 0;
+    int result = 0;
+    while( i <= n2)
+        result = result + n1 * n1;
+        i++;
     return result;
+
 }
 
 Console.WriteLine("Введите два числа ");
-int n1 = Convert.ToInt32(Console.ReadLine());
-int n2 = Convert.ToInt32(Console.ReadLine());
-double res = Power(n1, n2);
-Console.WriteLine($"Число {n1} в степени {n2} равно {res}");
-*/
+int number1 = Convert.ToInt32(Console.ReadLine());
+int number2 = Convert.ToInt32(Console.ReadLine());
+int res = Power(number1, number2);
+Console.WriteLine($"Число {number1} в степени {number2} равно {res}");
+
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-int Sum(int number)
-{
-    char[] arr = number.ToString().ToCharArray();
-    int count = arr.Length;
-    int result = 0;
-    for(int i = 0; i <= count ; i++)
-        result = result + arr[i];
-    return result;
-}
-Console.WriteLine("Введите число ");
-int n = Convert.ToInt32(Console.ReadLine());
-int res = Sum(n);
-Console.WriteLine($"Сумма цифр числа {n} равна {res}");
+
 
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
