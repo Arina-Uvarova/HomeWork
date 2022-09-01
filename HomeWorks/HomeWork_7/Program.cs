@@ -45,6 +45,8 @@ int[,] CreateRandom2dArray(int rows, int columns)
 
 void FindPoint(int[,] array, int a, int b)
 {
+    int c = array.GetLength(0);
+    int d = array.GetLength(1);
     for(int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
@@ -53,6 +55,8 @@ void FindPoint(int[,] array, int a, int b)
                 Console.WriteLine($"Элемент равен {array[i,j]}");
         }
     }
+    if(a > c | b > d)
+        Console.WriteLine("Такого элемента нет");
 }
 
 void Show2dArray(int [,] array)
@@ -81,6 +85,7 @@ FindPoint(myArray, num1, num2);
 
 
 // Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+/*
 int[,] CreateRandom2dArray(int rows, int columns)
 {
     int[,] newArray = new int [rows, columns];
@@ -92,15 +97,18 @@ int[,] CreateRandom2dArray(int rows, int columns)
 
 void FindPoint(int[,] array)
 {
-    int avg = 0;
-    for(int i = 0; i < array.GetLength(0); i++)
+    double avg = 0;
+    int a = array.GetLength(0);
+    for(int i = 0; i < array.GetLength(1); i++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
+        for(int j = 0; j < array.GetLength(0); j++)
         {
-           avg = avg + array[i,j];
+           avg = avg + array[j,i];
         }
-    
+        avg = avg / a;
         Console.Write($"Среднее арифметическое равно {avg} ");
+        Console.WriteLine("");
+        avg = 0;
 
     }
 }
@@ -121,3 +129,4 @@ int n = Convert.ToInt32(Console.ReadLine());
 int [,] myArray = CreateRandom2dArray(m,n);
 Show2dArray(myArray);
 FindPoint(myArray);
+*/
